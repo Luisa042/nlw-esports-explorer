@@ -1,0 +1,165 @@
+:root {
+  --body-background: #121214;
+  --section-background: #2a2634;
+  --gradient-color1: #9572fc;
+  --gradient-color2: #43e7ad;
+  --gradient-color3: #e2d45c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-image: url('./assets/background.png');
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: var(--body-background);
+}
+
+body * {
+  font-family: 'Inter', sans-serif;
+  line-height: 160%;
+}
+
+/* --- Header --- */
+header {
+  height: 120px;
+  margin-top: 32px;
+}
+
+header div {
+  width: 120px;
+  margin: auto;
+  padding: 4px;
+  display: flex;
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-color1) 0%,
+    var(--gradient-color2) 60%,
+    var(--gradient-color3) 100%
+  );
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+header div:hover {
+  transform: scale(1.1);
+}
+
+header div img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* --- Main --- */
+main {
+  max-width: 580px;
+  width: 90%;
+  margin: 32px auto;
+
+  display: grid;
+  gap: 24px;
+}
+
+section {
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-color1) 0%,
+    var(--gradient-color2) 60%,
+    var(--gradient-color3) 100%
+  );
+  border-radius: 10px;
+  padding-top: 4px;
+}
+
+section div {
+  background-color: var(--section-background);
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px;
+}
+
+section h2 {
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -0.47px;
+}
+
+section p {
+  font-size: 16px;
+  letter-spacing: -0.18px;
+  color: #a1a1aa;
+}
+
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+section ul li {
+  transition: transform 0.3s;
+}
+
+section ul li:hover {
+  transform: scale(1.1);
+}
+
+.games-list img {
+  width: 90px;
+  border-radius: 8px;
+}
+
+.channels-list img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+/* --- Animation --- */
+header div {
+  animation: fromTop 0.5s 0.2s backwards;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main section {
+  animation: fromBottom 0.7s 0.2s backwards;
+}
+
+main section:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+main section:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
